@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ele_colorPrimary">#3FA862</color>
+    <color name="ele_colorPrimaryDark">#3FA862</color>
+    <color name="ele_colorAccent">#FF4081</color>
+    <color name="ele_white">#FFFFFF</color>
+</resources>

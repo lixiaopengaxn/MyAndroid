@@ -1,0 +1,8 @@
+<resources>
+    <string name="public_app_name">演示项目</string>
+    <string name="public_module_name">app</string>
+    <string name="public_loading">加载中</string>
+    <string name="public_name_ele">电力服务</string>
+    <string name="public_name_wan">WanAndroid服务</string>
+    <string name="public_name_lun">轮子项目服务</string>
+</resources>
