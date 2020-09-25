@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="MVPArms Module"
+    description="Creates a new MVPArms Module.">
+
+    <category value="Application" />
+
+    <formfactor value="Mobile" />
+
+    <thumbs>
+        <thumb>arms_banner.jpg</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
