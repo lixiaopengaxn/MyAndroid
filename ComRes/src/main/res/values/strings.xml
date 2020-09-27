@@ -5,4 +5,18 @@
     <string name="public_name_ele">电力服务</string>
     <string name="public_name_wan">WanAndroid服务</string>
     <string name="public_name_lun">轮子项目服务</string>
+    <string name="public_name_send">发送</string>
+
+
+    <string name="public_comRes_loading">加载中&#8230;</string>
+    <string name="public_comRes_confirm">确定</string>
+    <string name="public_comRes_cancel">取消</string>
+    <string name="public_comRes_year">年</string>
+    <string name="public_comRes_month">月</string>
+    <string name="public_comRes_day">日</string>
+    <string name="public_comRes_hour">时</string>
+    <string name="public_comRes_minute">分</string>
+    <string name="public_comRes_second">秒</string>
+    <string name="public_comRes_network">当前没有网络连接，请检查网络设置</string>
+
 </resources>

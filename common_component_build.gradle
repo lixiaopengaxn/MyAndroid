@@ -1,5 +1,4 @@
 //def componentName = project.getName().startsWith("module_") ? project.getName().substring(0, "module_".length()) :
-
 if (isBuildModule.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
@@ -12,6 +11,7 @@ android {
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     useLibrary 'org.apache.http.legacy'
 
+
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -23,6 +23,7 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+        vectorDrawables.useSupportLibrary = true
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -74,7 +75,7 @@ dependencies {
     if (isBuildModule.toBoolean()) {
         //view
         annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
-            exclude module: 'support-annotations'
+            exclude module: 'annotations'
         }
         //tools
         annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]

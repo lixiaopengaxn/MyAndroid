@@ -31,6 +31,6 @@
         android:layout_gravity="center"
         android:textColor="@color/public_white"
         android:textSize="18sp"
-        tools:text="@string/app_name" />
+        android:text="@string/public_name_ele" />
 
 </androidx.appcompat.widget.Toolbar>

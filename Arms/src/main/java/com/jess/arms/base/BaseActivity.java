@@ -17,10 +17,12 @@ package com.jess.arms.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.InflateException;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +37,8 @@ import com.jess.arms.integration.lifecycle.ActivityLifecycleable;
 import com.jess.arms.mvp.IPresenter;
 import com.jess.arms.utils.ArmsUtils;
 import com.trello.rxlifecycle2.android.ActivityEvent;
+
+import java.util.Random;
 
 import javax.inject.Inject;
 
@@ -147,4 +151,27 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     public boolean useFragment() {
         return true;
     }
+
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode, @Nullable Bundle options) {
+        hideSoftKeyboard();
+        // 查看源码得知 startActivity 最终也会调用 startActivityForResult
+        super.startActivityForResult(intent, requestCode, options);
+    }
+
+    /**
+     * 隐藏软键盘
+     */
+    private void hideSoftKeyboard() {
+        // 隐藏软键盘，避免软键盘引发的内存泄露
+        View view = getCurrentFocus();
+        if (view != null) {
+            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (manager != null && manager.isActive(view)) {
+                manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        }
+    }
+
+
 }

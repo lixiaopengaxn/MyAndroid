@@ -64,4 +64,17 @@
     //marginBottom
     <dimen name="public_mar_bottom_4dp">4dp</dimen>
     <dimen name="public_mar_bottom_5dp">5dp</dimen>
+
+    <!-- 默认分割线大小 -->
+    <dimen name="public_line_size">1px</dimen>
+
+    <!-- 默认按钮的圆角大小 -->
+    <dimen name="public_button_round_size">999dp</dimen>
+
+    <!-- 通用对话框圆角大小 -->
+    <dimen name="public_dialog_ui_round_size">15dp</dimen>
+
+    <integer name="public_anim_duration_medium">300</integer>
+    <integer name="public_anim_duration_long">400</integer>
+
 </resources>

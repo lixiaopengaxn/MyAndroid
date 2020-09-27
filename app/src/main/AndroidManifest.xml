@@ -18,6 +18,7 @@
         android:label="@string/public_app_name"
         android:networkSecurityConfig="@xml/public_network_security_config"
         android:supportsRtl="true"
+        tools:replace="android:icon, android:theme"
         android:theme="@style/public_AppTheme"
         tools:targetApi="n">
 

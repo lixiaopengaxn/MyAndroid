@@ -6,6 +6,7 @@
         <activity
             android:name=".mvp.ui.activity.HomeActivity"
             android:label="@string/public_name_wan"
+            android:launchMode="singleTask"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"/>
 

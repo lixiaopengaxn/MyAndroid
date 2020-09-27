@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--toobar的颜色-->
     <color name="public_colorPrimary">#37889F</color>
     <color name="public_colorPrimaryDark">#37889F</color>
-    <color name="public_colorAccent">#FF4081</color>
+    <!-- 主题色 并且是所有 view 的颜色 -->
+    <color name="public_colorAccent">@color/public_color_FF9C15</color>
+
     <color name="public_white">#FFFFFF</color>
     <color name="public_black">#000000</color>
     <color name="public_color_transparent">#00000000</color>
@@ -42,4 +45,66 @@
     <color name="public_color_979797">#979797</color>
     <color name="public_color_FED652">#FED652</color>
     <color name="public_color_148CF9">#148CF9</color>
+
+    <!-- 透明色 -->
+    <color name="public_transparent">#00000000</color>
+
+    <!-- 白色 -->
+    <color name="public_white95">#F2FFFFFF</color>
+    <color name="public_white90">#E6FFFFFF</color>
+    <color name="public_white85">#D9FFFFFF</color>
+    <color name="public_white80">#CCFFFFFF</color>
+    <color name="public_white75">#BFFFFFFF</color>
+    <color name="public_white70">#B3FFFFFF</color>
+    <color name="public_white65">#A6FFFFFF</color>
+    <color name="public_white60">#99FFFFFF</color>
+    <color name="public_white55">#8CFFFFFF</color>
+    <color name="public_white50">#80FFFFFF</color>
+    <color name="public_white45">#73FFFFFF</color>
+    <color name="public_white40">#66FFFFFF</color>
+    <color name="public_white35">#59FFFFFF</color>
+    <color name="public_white30">#4DFFFFFF</color>
+    <color name="public_white25">#40FFFFFF</color>
+    <color name="public_white20">#33FFFFFF</color>
+    <color name="public_white15">#26FFFFFF</color>
+    <color name="public_white10">#1AFFFFFF</color>
+    <color name="public_white5">#0DFFFFFF</color>
+
+    <!-- 黑色 -->
+    <color name="public_black95">#F2000000</color>
+    <color name="public_black90">#E6000000</color>
+    <color name="public_black85">#D9000000</color>
+    <color name="public_black80">#CC000000</color>
+    <color name="public_black75">#B000000F</color>
+    <color name="public_black70">#B3000000</color>
+    <color name="public_black65">#A6000000</color>
+    <color name="public_black60">#99000000</color>
+    <color name="public_black55">#8C000000</color>
+    <color name="public_black50">#80000000</color>
+    <color name="public_black45">#73000000</color>
+    <color name="public_black40">#66000000</color>
+    <color name="public_black35">#59000000</color>
+    <color name="public_black30">#4D000000</color>
+    <color name="public_black25">#40000000</color>
+    <color name="public_black20">#33000000</color>
+    <color name="public_black15">#26000000</color>
+    <color name="public_black10">#1A000000</color>
+    <color name="public_black5">#0D000000</color>
+
+
+    <!-- 按钮按压时的颜色 -->
+    <color name="public_colorButtonPressed">#cbcbcb</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="public_colorButtonDisable">#BBBBBB</color>
+    <!-- 分割线的颜色 -->
+    <color name="public_colorLine">#ECECEC</color>
+    <!-- 图标颜色 -->
+    <color name="public_colorIcon">#7C7C7C</color>
+
+    <!-- 对话框确认按钮文本颜色 -->
+    <color name="public_colorConfirm">#007AFF</color>
+
+    <!-- 对话框取消按钮文本颜色 -->
+    <color name="public_colorCancel">#F44336</color>
+
 </resources>

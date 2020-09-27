@@ -3,6 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <include layout="@layout/include_title" />
+
+    <com.xp.coms.view.PButton
+        android:id="@+id/lun_button_1"
+        style="@style/public_PaddingButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/lun_home_view" />
+
+    <com.xp.coms.view.PButton
+        android:id="@+id/lun_button_2"
+        style="@style/public_PaddingButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/lun_home_dialog" />
+
+    <com.xp.coms.view.PButton
+        android:id="@+id/lun_button_3"
+        style="@style/public_PaddingButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/lun_home_browser" />
+
+    <com.xp.coms.view.PButton
+        android:id="@+id/lun_button_4"
+        style="@style/public_PaddingButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/lun_home_view" />
+
+    <com.xp.coms.view.PButton
+        android:id="@+id/lun_button_5"
+        style="@style/public_PaddingButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/lun_home_view" />
+
+    <com.xp.coms.view.PButton
+        android:id="@+id/lun_button_6"
+        style="@style/public_PaddingButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/lun_home_view" />
+
+
+
 
 </LinearLayout>

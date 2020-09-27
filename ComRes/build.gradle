@@ -13,6 +13,11 @@ android {
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
     }
 
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,4 +37,5 @@ dependencies {
     }
     api rootProject.ext.dependencies["paginate"]
     api rootProject.ext.dependencies["lottie"]
+    testImplementation rootProject.ext.dependencies["junit"]
 }

@@ -6,4 +6,6 @@
     android:orientation="vertical"
     tools:ignore="ResourceName">
 
+    <include layout="@layout/wan_include_title"/>
+
 </LinearLayout>

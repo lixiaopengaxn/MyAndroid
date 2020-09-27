@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">ModuleLunzi</string>
+    <string name="lun_app_name">ModuleLunzi</string>
+    <string name="lun_home_view">EditText</string>
+    <string name="lun_home_dialog">Dialog</string>
+    <string name="lun_home_browser">浏览器</string>
+    <string name="lun_home_4">ModuleLunzi</string>
+    <string name="lun_home_5">ModuleLunzi</string>
+    <string name="lun_home_6">ModuleLunzi</string>
+    <string name="lun_home_7">ModuleLunzi</string>
 </resources>

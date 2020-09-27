@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="public_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/public_colorPrimary</item>
         <item name="colorPrimaryDark">@color/public_colorPrimaryDark</item>
         <item name="colorAccent">@color/public_colorAccent</item>
-        <item name="android:windowAnimationStyle">@style/public_Activity_Animation</item>
+<!--        <item name="android:windowAnimationStyle">@style/public_Activity_Animation</item>-->
     </style>
 
     <style name="public_Activity_Animation">
@@ -35,4 +35,146 @@
         <!--是否模糊-->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <!-- 对话框默认样式 -->
+    <style name="public_base_dialog_style" parent="Theme.AppCompat.DayNight.Dialog.Alert"><!-- @android:style/Theme.Dialog -->
+        <!-- 无边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 浮在 Activity 之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 遮盖层 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 动画效果 -->
+        <item name="android:windowEnterAnimation">@anim/public_scale_in_window</item>
+        <item name="android:windowExitAnimation">@anim/public_scale_out_window</item>
+        <!-- Base.Theme.AppCompat.Light.Dialog.Alert 特有的属性，用于指定默认宽度，这里需要禁用 -->
+        <item name="android:windowMinWidthMajor">0dp</item>
+        <item name="android:windowMinWidthMinor">0dp</item>
+        <!-- 解决 ActionBar 占位导致 Dialog 无法全屏显示的问题 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- ActionMode 覆盖 Actionbar，不顶下来 -->
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 不感知敏感的切换 -->
+        <!--<item name="android:configChanges">orientation|screenSize|keyboardHidden</item>-->
+        <!-- 默认隐藏输入法 -->
+        <!--<item name="android:windowSoftInputMode">stateHidden</item>-->
+        <!-- Dialog 全屏显示 -->
+        <!--<item name="android:windowFullscreen">true</item>-->
+    </style>
+
+
+    <!-- 默认圆角按钮样式 -->
+    <style name="public_ButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/public_white90</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/public_button_selector</item>
+        <item name="android:foreground">@null</item>
+    </style>
+
+    <!-- 不带圆角按钮样式 -->
+    <style name="public_RectButtonStyle" parent="public_ButtonStyle">
+        <item name="android:background">@drawable/public_button_rect_selector</item>
+    </style>
+
+    <!-- 不带圆角按钮样式 -->
+    <style name="public_PaddingButtonStyle" parent="public_ButtonStyle">
+        <item name="android:layout_marginLeft">@dimen/public_pad_bottom_20dp</item>
+        <item name="android:layout_marginRight">@dimen/public_pad_bottom_20dp</item>
+    </style>
+
+
+
+    <!-- 默认文本框样式 -->
+    <style name="public_EditTextStyle">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColorHint">#A4A4A4</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+    </style>
+
+    <!-- 默认水平分割线样式 -->
+    <style name="public_HorizontalLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/public_line_size</item>
+        <item name="android:background">@color/public_colorLine</item>
+    </style>
+
+    <!-- 默认垂直分割线样式 -->
+    <style name="public_VerticalLineStyle">
+        <item name="android:layout_width">@dimen/public_line_size</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/public_colorLine</item>
+    </style>
+
+    <!-- 获取验证码样式 -->
+    <style name="public_CountdownViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/public_countdown_selector</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:minWidth">90dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/public_name_send</item>
+        <item name="android:textColor">@drawable/public_countdown_color_selector</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <!-- 缩放动画 -->
+    <style name="public_ScaleAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_scale_in_window</item>
+        <item name="android:windowExitAnimation">@anim/public_scale_out_window</item>
+    </style>
+
+    <!-- ios 动画 -->
+    <style name="public_IOSAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_ios_in_window</item>
+        <item name="android:windowExitAnimation">@anim/public_ios_out_window</item>
+    </style>
+
+    <!-- 顶部弹出动画 -->
+    <style name="public_TopAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_top_in_window</item>
+        <item name="android:windowExitAnimation">@anim/public_top_out_window</item>
+    </style>
+
+    <!-- 底部弹出动画 -->
+    <style name="public_BottomAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_bottom_in_window</item>
+        <item name="android:windowExitAnimation">@anim/public_bottom_out_window</item>
+    </style>
+
+    <!-- 左边弹出动画 -->
+    <style name="public_LeftAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_left_in_window</item>
+        <item name="android:windowExitAnimation">@anim/public_left_out_window</item>
+    </style>
+
+    <!-- 右边弹出动画 -->
+    <style name="public_RightAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_right_in_window</item>
+        <item name="android:windowExitAnimation">@anim/public_right_out_window</item>
+    </style>
+
+
 </resources>

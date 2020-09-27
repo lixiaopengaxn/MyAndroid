@@ -3,15 +3,16 @@ ext {
     android = [
             compileSdkVersion: 29,
             buildToolsVersion: "29.0.3",
-            minSdkVersion    : 16,
+            minSdkVersion    : 21,
             targetSdkVersion : 29,
             versionCode      : 1,
             versionName      : "1.0.0"
     ]
 
     version = [
-            androidSupportSdkVersion: "28.0.0",
-            androidXSdkVersion      : "1.1.0",
+            androidSupportSdkVersion: "29.0.0",
+            androidXSdkVersion      : "1.2.0-alpha01",
+            androidXGoogleVersion   : "1.3.0-alpha01",
             retrofitSdkVersion      : "2.7.2",
             dagger2SdkVersion       : "2.26",
             glideSdkVersion         : "4.11.0",
@@ -32,8 +33,8 @@ ext {
             "recyclerview-v7"          : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
 
             //androidx
-            "appcompat"                : "androidx.appcompat:appcompat:${version["androidXSdkVersion"]}",
-            "design"                   : "com.google.android.material:material:${version["androidXSdkVersion"]}",
+            "appcompat"                : "androidx.appcompat:appcompat:${version["androidXGoogleVersion"]}",
+            "design"                   : "com.google.android.material:material:${version["androidXGoogleVersion"]}",
             "legacy-support-v4"        : "androidx.legacy:legacy-support-v4:1.0.0",
             "cardview"                 : "androidx.cardview:cardview:1.0.0",
             "annotations"              : "androidx.annotation:annotation:${version["androidXSdkVersion"]}",
