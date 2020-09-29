@@ -6,11 +6,12 @@
     <application
         android:name="com.jess.arms.base.BaseApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/base_logo"
         android:label="@string/public_name_lun"
+        tools:replace="android:theme"
         android:networkSecurityConfig="@xml/public_network_security_config"
         android:supportsRtl="true"
-        android:theme="@style/public_AppTheme">
+        android:theme="@style/lun_AppTheme">
 
         <activity
             android:name=".mvp.ui.activity.HomeActivity"

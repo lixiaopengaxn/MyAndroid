@@ -53,7 +53,7 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
             }
             if (activity.findViewById(R.id.toolbar_back) != null) {
                 activity.findViewById(R.id.toolbar_back).setOnClickListener(v -> {
-                    activity.onBackPressed();
+                    activity.finish();
                 });
             }
         }

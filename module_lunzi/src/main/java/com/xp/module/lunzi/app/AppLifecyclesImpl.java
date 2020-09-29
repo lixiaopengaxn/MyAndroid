@@ -11,6 +11,7 @@ import com.jess.arms.utils.ArmsUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.xp.module.lunzi.BuildConfig;
+import com.xp.module.lunzi.R;
 
 
 import butterknife.ButterKnife;
@@ -36,6 +37,7 @@ public class AppLifecyclesImpl implements AppLifecycles {
 
     @Override
     public void onCreate(@NonNull Application application) {
+        application.setTheme(R.style.lun_AppTheme);
         if (LeakCanary.isInAnalyzerProcess(application)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.

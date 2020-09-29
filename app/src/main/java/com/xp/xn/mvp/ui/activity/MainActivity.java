@@ -27,6 +27,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.integration.AppManager;
 import com.jess.arms.utils.ArmsUtils;
 import com.xp.comsdk.core.RouterHub;
 import com.xp.comsdk.utils.Utils;
@@ -79,6 +80,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+        ArmsUtils.statuInScreen(this);
         ARouter.getInstance().inject(this);
         //这里想展示组件向外提供服务的功能, 模拟下组件向宿主提供一些必要的信息, 这里为了简单就直接返回本地数据不请求网络了
         loadELeInfo();

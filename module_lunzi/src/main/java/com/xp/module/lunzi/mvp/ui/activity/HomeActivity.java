@@ -12,6 +12,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.xp.coms.dialog.ProgresDialog;
 import com.xp.coms.view.PButton;
 import com.xp.comsdk.core.RouterHub;
 import com.xp.module.lunzi.R;
@@ -73,17 +74,16 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        ArmsUtils.snackbarText("??????");
+
     }
 
     @Override
     public void showLoading() {
-
+        new ProgresDialog(this).show();
     }
 
     @Override
     public void hideLoading() {
-
     }
 
     @Override

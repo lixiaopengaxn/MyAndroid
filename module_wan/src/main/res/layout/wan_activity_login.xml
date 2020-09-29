@@ -3,6 +3,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:layoutAnimation="@anim/public_from_bottom_layout"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.LoginActivity"
+    tools:layoutAnimation="@null">
+
+    <com.xp.coms.view.ScaleImageView
+        android:layout_weight="4"
+        android:layout_marginTop="30dp"
+        android:id="@+id/wan_login_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:clickable="true"
+        android:layout_marginVertical="30dp"
+        app:public_scaleRatio="1.2"
+        app:srcCompat="@mipmap/base_logo" />
+
+    <LinearLayout
+        android:layout_weight="5"
+        android:id="@+id/wan_ll_login_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.xp.coms.view.ClearEditText
+            android:id="@+id/wan_clear_login_phone"
+            style="@style/public_EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/public_phone_input_hint"
+            android:inputType="textVisiblePassword"
+            android:singleLine="true"
+            app:public_regexType="mobile" />
+
+        <View
+            style="@style/public_HorizontalLineStyle"
+            android:layout_marginHorizontal="40dp" />
+
+        <com.xp.coms.view.PasswordEditText
+            android:id="@+id/wan_ps_login_password"
+            style="@style/public_EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/public_password_input_hint"
+            android:maxLength="20"
+            android:maxLines="1" />
+
+        <View
+            style="@style/public_HorizontalLineStyle"
+            android:layout_marginHorizontal="40dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:orientation="horizontal">
+
+            <com.xp.coms.view.PTextView
+                android:id="@+id/wan_login_forget"
+                android:layout_width="@dimen/public_height_80dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/public_login_forget"
+                android:textColor="@color/public_colorAccent" />
+
+
+            <com.xp.coms.view.PTextView
+                android:layout_alignParentRight="true"
+                android:id="@+id/wan_login_register"
+                android:layout_width="@dimen/public_height_80dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/public_login_register"
+                android:textColor="@color/public_colorAccent" />
+
+        </RelativeLayout>
+
+
+
+        <com.xp.coms.view.PButton
+            android:id="@+id/wan_btn_login_commit"
+            style="@style/public_PaddingButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/public_login_text" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/wan_ll_login_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            style="@style/public_HorizontalLineStyle"
+            android:layout_width="60dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:text="@string/public_login_other"
+            android:textColor="@color/public_black50" />
+
+        <View
+            style="@style/public_HorizontalLineStyle"
+            android:layout_width="60dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.xp.coms.view.ScaleImageView
+            android:id="@+id/wan_iv_login_qq"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="25dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:public_scaleRatio="1.2"
+            app:srcCompat="@drawable/public_login_qq_ic" />
+
+        <com.xp.coms.view.ScaleImageView
+            android:id="@+id/wan_iv_login_wechat"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="25dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:public_scaleRatio="1.2"
+            app:srcCompat="@drawable/public_login_wechat_ic" />
+    </LinearLayout>
 
 </LinearLayout>

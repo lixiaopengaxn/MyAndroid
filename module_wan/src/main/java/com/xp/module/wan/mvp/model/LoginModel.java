@@ -11,6 +11,11 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.xp.module.wan.mvp.contract.LoginContract;
+import com.xp.module.wan.mvp.model.api.service.WanService;
+import com.xp.module.wan.mvp.model.entity.BaseWanResponse;
+import com.xp.module.wan.mvp.model.entity.WanLoginBean;
+
+import io.reactivex.Observable;
 
 
 /**
@@ -42,5 +47,12 @@ public class LoginModel extends BaseModel implements LoginContract.Model {
         super.onDestroy();
         this.mGson = null;
         this.mApplication = null;
+    }
+
+    @Override
+    public Observable<BaseWanResponse<WanLoginBean>> toLogin(String userName, String passWord) {
+        return mRepositoryManager
+                .obtainRetrofitService(WanService.class)
+                .toLogin(userName,passWord);
     }
 }

@@ -15,6 +15,7 @@
  */
 package com.xp.xn.mvp.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ import androidx.annotation.Nullable;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.utils.ArmsUtils;
 import com.xp.comsdk.core.RouterHub;
 import com.xp.comsdk.utils.Utils;
 import com.xp.xn.R;
@@ -52,6 +54,7 @@ public class SplashActivity extends BaseActivity {
         return R.layout.activity_splash;
     }
 
+    @SuppressLint("CheckResult")
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         Observable.timer(2, TimeUnit.SECONDS)

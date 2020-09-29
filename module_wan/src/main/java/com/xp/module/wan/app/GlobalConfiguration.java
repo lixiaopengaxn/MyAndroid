@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.di.module.GlobalConfigModule;
+import com.jess.arms.http.BaseUrl;
 import com.jess.arms.http.imageloader.glide.GlideImageLoaderStrategy;
 import com.jess.arms.http.log.RequestInterceptor;
 import com.jess.arms.integration.ConfigModule;
@@ -16,11 +17,16 @@ import com.jess.arms.utils.ArmsUtils;
 import com.squareup.leakcanary.RefWatcher;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import com.xp.comsdk.core.RouterHub;
 import com.xp.module.wan.BuildConfig;
 import com.xp.module.wan.mvp.model.api.Api;
+
+import me.jessyan.retrofiturlmanager.RetrofitUrlManager;
+import okhttp3.HttpUrl;
 
 /**
  * ================================================
@@ -39,7 +45,6 @@ import com.xp.module.wan.mvp.model.api.Api;
  * ================================================
  */
 public final class GlobalConfiguration implements ConfigModule {
-//    public static String sDomain = Api.APP_DOMAIN;
 
     @Override
     public void applyOptions(Context context, GlobalConfigModule.Builder builder) {
@@ -57,12 +62,7 @@ public final class GlobalConfiguration implements ConfigModule {
                 //以下方式是 Arms 框架自带的切换 BaseUrl 的方式, 在整个 App 生命周期内只能切换一次, 若需要无限次的切换 BaseUrl, 以及各种复杂的应用场景还是需要使用 RetrofitUrlManager 框架
                 //以下代码只是配置, 还要使用 Okhttp (AppComponent 中提供) 请求服务器获取到正确的 BaseUrl 后赋值给 GlobalConfiguration.sDomain
                 //切记整个过程必须在第一次调用 Retrofit 接口之前完成, 如果已经调用过 Retrofit 接口, 此种方式将不能切换 BaseUrl
-//                .baseurl(new BaseUrl() {
-//                    @Override
-//                    public HttpUrl url() {
-//                        return HttpUrl.parse(sDomain);
-//                    }
-//                })
+                .baseurl(() -> Objects.requireNonNull(HttpUrl.parse(Api.APP_DOMAIN)))
 
                 //可根据当前项目的情况以及环境为框架某些部件提供自定义的缓存策略, 具有强大的扩展性
 //                .cacheFactory(new Cache.Factory() {
@@ -107,7 +107,7 @@ public final class GlobalConfiguration implements ConfigModule {
 //                })
 
                 //可以自定义一个单例的线程池供全局使用
-//                .executorService(Executors.newCachedThreadPool())
+                .executorService(Executors.newCachedThreadPool())
 
                 //这里提供一个全局处理 Http 请求和响应结果的处理类, 可以比客户端提前一步拿到服务器返回的结果, 可以做一些操作, 比如 Token 超时后, 重新获取 Token
                 .globalHttpHandler(new GlobalHttpHandlerImpl(context))

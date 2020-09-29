@@ -458,4 +458,22 @@ public class ArmsUtils {
         Preconditions.checkState(context.getApplicationContext() instanceof App, "%s must be implements %s", context.getApplicationContext().getClass().getName(), App.class.getName());
         return ((App) context.getApplicationContext()).getAppComponent();
     }
+
+//    /**
+//     * 递归获取 ViewGroup 中的 TitleBar 对象
+//     */
+//    public static TitleBar obtainTitleBar(ViewGroup group) {
+//        for (int i = 0; i < group.getChildCount(); i++) {
+//            View view = group.getChildAt(i);
+//            if ((view instanceof TitleBar)) {
+//                return (TitleBar) view;
+//            } else if (view instanceof ViewGroup) {
+//                TitleBar titleBar = obtainTitleBar((ViewGroup) view);
+//                if (titleBar != null) {
+//                    return titleBar;
+//                }
+//            }
+//        }
+//        return null;
+//    }
 }

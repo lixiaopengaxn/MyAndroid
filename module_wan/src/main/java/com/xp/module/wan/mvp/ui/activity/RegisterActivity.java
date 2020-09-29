@@ -51,7 +51,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
+        setTitle("注册");
     }
 
     @Override

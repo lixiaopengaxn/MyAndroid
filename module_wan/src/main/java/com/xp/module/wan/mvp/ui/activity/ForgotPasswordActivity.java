@@ -1,5 +1,6 @@
 package com.xp.module.wan.mvp.ui.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -79,5 +80,10 @@ public class ForgotPasswordActivity extends BaseActivity<ForgotPasswordPresenter
     @Override
     public void killMyself() {
         finish();
+    }
+
+    @Override
+    public Activity getActivity() {
+        return this;
     }
 }

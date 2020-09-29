@@ -31,6 +31,6 @@
         android:layout_gravity="center"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:text="@string/public_name_wan" />
+        tools:text="@string/public_name_wan" />
 
 </androidx.appcompat.widget.Toolbar>

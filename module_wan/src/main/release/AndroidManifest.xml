@@ -3,7 +3,7 @@
     package="com.xp.module.wan">
 
     <application>
-        <activity android:name=".mvp.ui.activity.ForgotPasswordActivity"></activity>
+        <activity android:name=".mvp.ui.activity.ForgotPasswordActivity"/>
         <activity android:name=".mvp.ui.activity.RegisterActivity" />
         <activity android:name=".mvp.ui.activity.LoginActivity" />
         <activity

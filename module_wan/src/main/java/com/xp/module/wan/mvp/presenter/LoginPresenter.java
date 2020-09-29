@@ -2,16 +2,28 @@ package com.xp.module.wan.mvp.presenter;
 
 import android.app.Application;
 
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.OnLifecycleEvent;
+
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.http.imageloader.ImageLoader;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
+import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
+import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
+import timber.log.Timber;
 
 import javax.inject.Inject;
 
+import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.RxLifecycleUtils;
 import com.xp.module.wan.mvp.contract.LoginContract;
+import com.xp.module.wan.mvp.model.entity.BaseWanResponse;
+import com.xp.module.wan.mvp.model.entity.WanLoginBean;
 
 
 /**
@@ -37,9 +49,32 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
     @Inject
     AppManager mAppManager;
 
+
     @Inject
     public LoginPresenter(LoginContract.Model model, LoginContract.View rootView) {
         super(model, rootView);
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    void onCreate() {
+    }
+
+    public void logIn(String userName,String passWord){
+        mModel.toLogin(userName, passWord)
+                .subscribeOn(Schedulers.io())
+                .retryWhen(new RetryWithDelay(3,3))
+                .doOnSubscribe(disposable -> {
+
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() ->{})
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseWanResponse<WanLoginBean>>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseWanResponse<WanLoginBean> wanLogin) {
+                        ArmsUtils.snackbarText(wanLogin.toString());
+                    }
+                });
     }
 
     @Override

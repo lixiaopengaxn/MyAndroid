@@ -18,5 +18,11 @@
     <string name="public_comRes_minute">分</string>
     <string name="public_comRes_second">秒</string>
     <string name="public_comRes_network">当前没有网络连接，请检查网络设置</string>
+    <string name="public_login_other">其他登录方式</string>
+    <string name="public_login_text">登陆</string>
+    <string name="public_login_forget">忘记密码</string>
+    <string name="public_login_register">注册</string>
+    <string name="public_password_input_hint">请输入密码</string>
+    <string name="public_phone_input_hint">输入手机号码</string>
 
 </resources>
