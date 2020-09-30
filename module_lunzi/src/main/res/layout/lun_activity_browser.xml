@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_title"/>
+    <include layout="@layout/lun_include_title"/>
 
     <ProgressBar
         android:id="@+id/pb_browser_progress"

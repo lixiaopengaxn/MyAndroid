@@ -75,7 +75,7 @@ dependencies {
     if (isBuildModule.toBoolean()) {
         //view
         annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
-            exclude module: 'annotations'
+            exclude module: 'annotation'
         }
         //tools
         annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]

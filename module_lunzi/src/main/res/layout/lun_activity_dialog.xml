@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_title"/>
+    <include layout="@layout/lun_include_title"/>
 
     <com.xp.coms.view.PButton
         android:id="@+id/btn_dialog_message"

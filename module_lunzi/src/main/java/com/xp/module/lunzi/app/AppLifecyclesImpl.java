@@ -37,7 +37,6 @@ public class AppLifecyclesImpl implements AppLifecycles {
 
     @Override
     public void onCreate(@NonNull Application application) {
-        application.setTheme(R.style.lun_AppTheme);
         if (LeakCanary.isInAnalyzerProcess(application)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.

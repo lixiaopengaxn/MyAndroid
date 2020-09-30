@@ -11,7 +11,12 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.xp.xn"
+        if (!isBuildModule.toBoolean()) {
+            applicationId rootProject.ext.android["appPackage"]
+        } else {
+            applicationId rootProject.ext.android["debugAppPackage"]
+        }
+
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
@@ -68,8 +73,7 @@ dependencies {
 
     //view
     annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
-        exclude module: 'annotations'
-        exclude module: 'butterknife'
+        exclude module: 'annotation'
     }
     //test
     testImplementation rootProject.ext.dependencies["junit"]

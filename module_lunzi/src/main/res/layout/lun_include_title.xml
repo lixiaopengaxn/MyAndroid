@@ -3,14 +3,31 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/toolbar"
+    android:id="@+id/toolbar_lun"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="?android:actionBarSize"
     android:background="?attr/colorPrimary"
     app:contentInsetStart="0dp"
     tools:ignore="ResourceName">
 
+    <com.xp.coms.layout.titlebar.TitleBar
+        android:id="@+id/base_title_bar"
+        android:elevation="1dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:public_drawableSize="27dp"
+        android:background="@drawable/public_shape_gradient"
+        app:public_barStyle="transparent"
+        app:public_leftBackground="@null"
+        app:public_leftTitle="@null"
+        app:public_rightBackground="@null"
+        app:public_rightTitle="@string/public_res_setting"
+        app:public_title="@string/public_app_name"
+        app:public_titleColor="@null"
+        app:public_lineVisible="false"/>
+
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/toolbar_back"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -22,7 +39,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/ic_arrow_back_white_24dp" />
+            android:src="@mipmap/ic_arrow_back_white_24dp" />
     </RelativeLayout>
 
     <TextView
@@ -30,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:visibility="gone"
         android:textColor="@color/public_white"
         android:textSize="18sp"
         android:text="@string/public_comRes_loading" />

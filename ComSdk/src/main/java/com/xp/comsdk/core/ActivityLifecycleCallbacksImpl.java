@@ -42,6 +42,7 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
 
     @Override
     public void onActivityStarted(Activity activity) {
+
         Timber.i(activity + " - onActivityStarted");
         if (!activity.getIntent().getBooleanExtra("isInitToolbar", false)) {
             //由于加强框架的兼容性,故将 setContentView 放到 onActivityCreated 之后,onActivityStarted 之前执行

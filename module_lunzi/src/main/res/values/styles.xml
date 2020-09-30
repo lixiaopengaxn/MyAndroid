@@ -1,7 +1,2 @@
 <resources>
-    <style name="lun_AppTheme" parent="public_AppTheme">
-        <item name="colorPrimary">@color/public_black</item>
-        <item name="colorPrimaryDark">@color/public_black</item>
-        <item name="colorAccent">@color/public_black</item>
-    </style>
 </resources>

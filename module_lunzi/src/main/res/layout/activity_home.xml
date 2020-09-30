@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:ignore="ResourceName">
 
-    <include layout="@layout/include_title" />
+    <include layout="@layout/lun_include_title" />
 
     <com.xp.coms.view.PButton
         android:id="@+id/lun_button_1"
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="@string/lun_home_view" />
+        android:text="@string/lun_home_title" />
 
     <com.xp.coms.view.PButton
         android:id="@+id/lun_button_5"

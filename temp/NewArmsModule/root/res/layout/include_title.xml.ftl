@@ -10,28 +10,18 @@
     app:contentInsetStart="0dp"
     tools:ignore="ResourceName">
 
-    <RelativeLayout
-        android:id="@+id/toolbar_back"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="left">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/ic_arrow_back_white_24dp" />
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/toolbar_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/public_white"
-        android:textSize="18sp"
-        tools:text="@string/app_name" />
+            <com.xp.coms.layout.titlebar.TitleBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/public_shape_gradient"
+                app:public_barStyle="transparent"
+                app:public_leftBackground="@null"
+                app:public_leftTitle="@string/public_res_back"
+                app:public_rightBackground="@null"
+                app:public_rightTitle="@string/public_res_setting"
+                app:public_title="@string/public_app_name"
+                app:public_titleColor="@null" />
 
 </androidx.appcompat.widget.Toolbar>

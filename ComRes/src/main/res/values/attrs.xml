@@ -69,4 +69,59 @@
         <attr name="public_sizeRatio" format="float" />
     </declare-styleable>
 
+    <declare-styleable name="public_TitleBar">
+        <!-- 整体样式 -->
+        <attr name="public_barStyle">
+            <enum name="light" value="0x10" />
+            <enum name="night" value="0x20" />
+            <enum name="transparent" value="0x30" />
+            <enum name="ripple" value="0x40" />
+        </attr>
+        <!-- 中间 -->
+        <attr name="public_title" format="string" />
+        <attr name="public_titleColor" format="color" />
+        <attr name="public_titleSize" format="dimension" />
+        <attr name="public_titleGravity">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="center_vertical" value="0x10" />
+            <flag name="center_horizontal" value="0x01" />
+            <flag name="center" value="0x11" />
+            <flag name="start" value="0x00800003" />
+            <flag name="end" value="0x00800005" />
+        </attr>
+        <attr name="public_titleStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <!-- 左边 -->
+        <attr name="public_leftTitle" format="string"/>
+        <attr name="public_leftIcon" format="reference" /><!-- leftIcon 优先于 backButton -->
+        <attr name="public_backButton" format="boolean" /><!-- 返回按钮（默认开） -->
+        <attr name="public_leftColor" format="color" />
+        <attr name="public_leftSize" format="dimension" />
+        <attr name="public_leftBackground" format="reference|color" />
+        <!-- 右边 -->
+        <attr name="public_rightTitle" format="string" />
+        <attr name="public_rightIcon" format="reference" />
+        <attr name="public_rightColor" format="color" />
+        <attr name="public_rightSize" format="dimension" />
+        <attr name="public_rightBackground" format="reference|color" />
+        <!-- 分割线 -->
+        <attr name="public_lineVisible" format="boolean" />
+        <attr name="public_lineColor" format="reference|color" />
+        <attr name="public_lineSize" format="dimension" />
+        <!-- 图标显示大小 -->
+        <attr name="public_drawableSize" format="dimension" />
+        <!-- 图标和文字的间距 -->
+        <attr name="android:drawablePadding" />
+        <!-- 控件水平内间距 -->
+        <attr name="android:paddingVertical" />
+        <!-- 控件垂直内间距（可用于调整标题栏自适应的高度） -->
+        <attr name="android:paddingHorizontal" />
+    </declare-styleable>
+
 </resources>

@@ -41,9 +41,9 @@ dependencies {
 
     //tools
     api rootProject.ext.dependencies["androideventbus"]
+    api rootProject.ext.dependencies["design"]
     api(rootProject.ext.dependencies["arouter"]) {
-        exclude module: 'design'
-        exclude module: 'annotations'
+        exclude module: 'annotation'
     }
     api rootProject.ext.dependencies["retrofit-url-manager"]
 }

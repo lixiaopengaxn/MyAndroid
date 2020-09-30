@@ -8,11 +8,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/base_logo"
         android:label="@string/public_name_lun"
-        tools:replace="android:theme"
         android:networkSecurityConfig="@xml/public_network_security_config"
         android:supportsRtl="true"
-        android:theme="@style/lun_AppTheme">
-
+        android:theme="@style/public_AppTheme"
+        tools:replace="android:theme">
+        <activity android:name=".mvp.ui.activity.TitleBarActivity"/>
         <activity
             android:name=".mvp.ui.activity.HomeActivity"
             android:configChanges="orientation|screenSize"
@@ -24,13 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.ui.activity.EditActivity"
+        <activity
+            android:name=".mvp.ui.activity.EditActivity"
             tools:ignore="DuplicateActivity" />
-
-        <activity android:name=".mvp.ui.activity.BrowserActivity"
+        <activity
+            android:name=".mvp.ui.activity.BrowserActivity"
             tools:ignore="DuplicateActivity" />
-
-        <activity android:name=".mvp.ui.activity.DialogsActivity"/>
+        <activity android:name=".mvp.ui.activity.DialogsActivity" />
         <!--
  只要依赖 AutoSize 就必须填写设计图尺寸, 否则报错, 不想使用 AutoSize 就不要依赖 AutoSize
         只要填写完设计图的尺寸, AutoSize 就会自动启动, 以下 dp 尺寸是根据公式 px / (dpi / 160) 求出, 运算时使用测试机的 dpi 即可
@@ -49,13 +49,13 @@
             android:name="com.xp.module.lunzi.app.GlobalConfiguration"
             android:value="ConfigModule" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

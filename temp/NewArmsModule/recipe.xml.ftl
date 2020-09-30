@@ -4,8 +4,6 @@
     <mkdir at="${escapeXmlAttribute(projectOut)}/libs" />
     <mkdir at="${escapeXmlAttribute(resOut)}/anim" />
     <mkdir at="${escapeXmlAttribute(resOut)}/drawable" />
-    <mkdir at="${escapeXmlAttribute(resOut)}/drawable-xxhdpi" />
-    <mkdir at="${escapeXmlAttribute(resOut)}/drawable-xxxhdpi" />
     <mkdir at="${escapeXmlAttribute(resOut)}/mipmap-xxhdpi" />
     <mkdir at="${escapeXmlAttribute(resOut)}/mipmap-xxxhdpi" />
     <mkdir at="${escapeXmlAttribute(resOut)}/layout" />
@@ -90,11 +88,11 @@
 <copy from="root/res/mipmap-xxxhdpi/ic_launcher.png"
         to="${escapeXmlAttribute(resOut)}/mipmap-xxxhdpi/ic_launcher.png" />
 
-
-<copy from="root/res/drawable-xxhdpi/ic_arrow_back_white_24dp.png"
-        to="${escapeXmlAttribute(resOut)}/drawable-xxhdpi/ic_arrow_back_white_24dp.png" />
-<copy from="root/res/drawable-xxxhdpi/ic_arrow_back_white_24dp.png"
-        to="${escapeXmlAttribute(resOut)}/drawable-xxxhdpi/ic_arrow_back_white_24dp.png" />               
+<copy from="root/res/mipmap-xxhdpi/ic_launcher.png"
+        to="${escapeXmlAttribute(resOut)}/mipmap-xxhdpi/ic_arrow_back_white_24dp.png" />
+<copy from="root/res/mipmap-xxxhdpi/ic_launcher.png"
+        to="${escapeXmlAttribute(resOut)}/mipmap-xxxhdpi/ic_arrow_back_white_24dp.png" />  
+            
 
 <copy from="root/res/anim/translate_center_to_left.xml"
         to="${escapeXmlAttribute(resOut)}/anim/translate_center_to_left.xml" />

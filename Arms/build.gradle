@@ -27,7 +27,8 @@ android {
 
 dependencies {
     api(rootProject.ext.dependencies["legacy-support-v4"]) {
-        exclude module: 'annotations'
+        exclude module: 'annotation'
+        exclude module: 'design'
         exclude module: 'coordinatorlayout'
     }
     //androidx
@@ -101,7 +102,7 @@ dependencies {
     }
 
     //tools
-    compileOnly rootProject.ext.dependencies["javax.annotation"]
+    compileOnly rootProject.ext.dependencies["annotations"]
     api rootProject.ext.dependencies["dagger2"]
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
     compileOnly rootProject.ext.dependencies["androideventbus"]

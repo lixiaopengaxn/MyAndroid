@@ -112,7 +112,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
         } else if(v.getId() == R.id.lun_button_3){
             ArmsUtils.startActivity(BrowserActivity.class);
         } else if(v.getId() == R.id.lun_button_4){
-
+            ArmsUtils.startActivity(TitleBarActivity.class);
         } else if(v.getId() == R.id.lun_button_5){
 
         } else if(v.getId() == R.id.lun_button_6){

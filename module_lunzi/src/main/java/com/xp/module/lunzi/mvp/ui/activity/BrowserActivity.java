@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.xp.coms.layout.titlebar.TitleBar;
 import com.xp.coms.view.BrowserView;
 import com.xp.module.lunzi.R;
 import com.xp.module.lunzi.R2;
@@ -47,8 +48,8 @@ public class BrowserActivity extends BaseActivity<BrowserPresenter> implements B
     ProgressBar mPbBrowserProgress;
     @BindView(R2.id.wv_browser_view)
     BrowserView mWvBrowserView;
-    @BindView(R2.id.toolbar_title)
-    TextView mTitle;
+    @BindView(R2.id.base_title_bar)
+    TitleBar titleBar;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -68,12 +69,10 @@ public class BrowserActivity extends BaseActivity<BrowserPresenter> implements B
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
 
-        mTitle.setText(R.string.public_comRes_loading);
-
         mWvBrowserView.setBrowserViewClient(new MyBrowserViewClient());
         mWvBrowserView.setBrowserChromeClient(new MyBrowserChromeClient(mWvBrowserView));
 
-        String url = "https://github.com/JessYanCoding";
+        String url = "https://www.baidu.com/";
         mWvBrowserView.loadUrl(url);
     }
 
@@ -156,7 +155,7 @@ public class BrowserActivity extends BaseActivity<BrowserPresenter> implements B
         @Override
         public void onReceivedTitle(WebView view, String title) {
             if (title != null) {
-                mTitle.setText(title);
+                titleBar.setTitle(title);
             }
         }
 

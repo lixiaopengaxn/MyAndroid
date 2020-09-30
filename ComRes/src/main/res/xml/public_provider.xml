@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+      
+    <external-path
+        name="external_files"
+        path="." />
+    <external-path
+        name="download"
+        path="." />
+    <external-path
+        name="pick_camera"
+        path="DCIM" />
+    <!-- 这个下载路径不可以修改，必须是 GDTDOWNLOAD -->
+    <external-path
+        name="gdt_sdk_download_path"
+        path="GDTDOWNLOAD" />
+    <external-path
+        name="ext_root"
+        path="AdPoymerDownLoad/" />
+
+</paths>

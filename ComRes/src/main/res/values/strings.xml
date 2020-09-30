@@ -1,5 +1,5 @@
 <resources>
-    <string name="public_app_name">演示项目</string>
+    <string name="public_app_name">正在开发中···</string>
     <string name="public_module_name">app</string>
     <string name="public_loading">加载中</string>
     <string name="public_name_ele">电力服务</string>
@@ -24,5 +24,8 @@
     <string name="public_login_register">注册</string>
     <string name="public_password_input_hint">请输入密码</string>
     <string name="public_phone_input_hint">输入手机号码</string>
+
+    <string name="public_res_back">返回</string>
+    <string name="public_res_setting">设置</string>
 
 </resources>
