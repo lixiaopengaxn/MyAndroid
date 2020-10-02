@@ -54,7 +54,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        ArmsUtils.startActivity(LoginActivity.class);
+
     }
 
     @Override

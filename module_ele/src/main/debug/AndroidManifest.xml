@@ -9,7 +9,7 @@
         android:label="@string/ele_app_name"
         android:networkSecurityConfig="@xml/public_network_security_config"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/public_AppTheme">
 
         <activity
             android:name=".mvp.ui.activity.HomeActivity"

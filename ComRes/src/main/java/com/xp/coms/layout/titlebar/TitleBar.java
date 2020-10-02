@@ -88,11 +88,11 @@ public class TitleBar extends FrameLayout
                 mCurrentInitializer = TitleBar.sGlobalInitializer;
                 break;
         }
-
+        mLineView = mCurrentInitializer.getLineView(context);
         mLeftView = mCurrentInitializer.getLeftView(context);
         mTitleView = mCurrentInitializer.getTitleView(context);
         mRightView = mCurrentInitializer.getRightView(context);
-        mLineView = mCurrentInitializer.getLineView(context);
+
 
         // 限制图标显示的大小
         if (array.hasValue(R.styleable.public_TitleBar_public_drawableSize)) {
@@ -223,10 +223,11 @@ public class TitleBar extends FrameLayout
             BaseBarInitializer.setViewBackground(this, mCurrentInitializer.getBackgroundDrawable(context));
         }
 
-        addView(mTitleView, 0);
-        addView(mLeftView, 1);
-        addView(mRightView, 2);
-        addView(mLineView, 3);
+        addView(mLineView, 0);
+        addView(mTitleView, 1);
+        addView(mLeftView, 2);
+        addView(mRightView, 3);
+
 
         addOnLayoutChangeListener(this);
     }

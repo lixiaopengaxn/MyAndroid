@@ -10,12 +10,16 @@ import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 
+import com.xp.coms.layout.titlebar.TitleBar;
+import com.xp.module.wan.R2;
 import com.xp.module.wan.di.component.DaggerRegisterComponent;
 import com.xp.module.wan.mvp.contract.RegisterContract;
 import com.xp.module.wan.mvp.presenter.RegisterPresenter;
 
 import com.xp.module.wan.R;
 
+
+import butterknife.BindView;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
@@ -34,6 +38,9 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
  */
 public class RegisterActivity extends BaseActivity<RegisterPresenter> implements RegisterContract.View {
 
+    @BindView(R2.id.base_title_bar)
+    TitleBar titleBar;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerRegisterComponent //如找不到该类,请编译一下项目
@@ -51,7 +58,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-
+        titleBar.setTitle("注册");
     }
 
     @Override

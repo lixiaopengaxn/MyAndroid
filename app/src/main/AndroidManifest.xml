@@ -61,6 +61,15 @@ AutoSize 的详细介绍请看这里 https://juejin.im/post/5bce688e6fb9a05cf715
             android:name="com.xp.xn.app.GlobalConfiguration"
             android:value="ConfigModule"/>
 
+        <!--适配华为（huawei）刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true"/>
+        <!--适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
 
     </application>
 

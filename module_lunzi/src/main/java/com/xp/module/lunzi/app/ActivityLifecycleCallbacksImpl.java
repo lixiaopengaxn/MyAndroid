@@ -2,9 +2,12 @@ package com.xp.module.lunzi.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +29,7 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+        //使得布局延伸到状态栏和导航栏区域
         Timber.i(activity + " - onActivityCreated");
     }
 
@@ -37,7 +41,7 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
             //而 findViewById 必须在 Activity setContentView() 后才有效,所以将以下代码从之前的 onActivityCreated 中移动到 onActivityStarted 中执行
             activity.getIntent().putExtra("isInitToolbar", true);
             //这里全局给Activity设置toolbar和title,你想象力有多丰富,这里就有多强大,以前放到BaseActivity的操作都可以放到这里
-            if (activity.findViewById(R.id.toolbar_lun) != null) {
+            if (activity.findViewById(R.id.public_toolbar) != null) {
                 if (activity instanceof AppCompatActivity) {
                     ((AppCompatActivity) activity).setSupportActionBar(activity.findViewById(R.id.toolbar_lun));
                     ((AppCompatActivity) activity).getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -48,14 +52,6 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
                     }
                 }
             }
-//            if (activity.findViewById(R.id.toolbar_title) != null) {
-//                ((TextView) activity.findViewById(R.id.toolbar_title)).setText(activity.getTitle());;
-//            }
-//            if (activity.findViewById(R.id.toolbar_back) != null) {
-//                activity.findViewById(R.id.toolbar_back).setOnClickListener(v -> {
-//                    activity.finish();
-//                });
-//            }
         }
     }
 

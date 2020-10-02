@@ -70,6 +70,7 @@ public interface RouterHub {
     interface WAN_I{
         String WAN_SERVICE_ELEINFOSERVIEW = WAN + SERVICE + "/WanInfoService";
         String WAN_HOME_ACTIVITY = WAN + "/HomeActivity";
+        String WAN_LOGIN_ACTIVITY =WAN + "/LoginActivity";
     }
 
     //玩Android 组件

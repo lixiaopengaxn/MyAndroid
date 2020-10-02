@@ -17,6 +17,8 @@ package com.xp.comsdk.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
@@ -54,4 +56,5 @@ public class Utils {
     public static void navigation(Context context, String path) {
         ARouter.getInstance().build(path).navigation(context);
     }
+
 }

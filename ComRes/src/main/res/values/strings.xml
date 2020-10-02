@@ -27,5 +27,12 @@
 
     <string name="public_res_back">返回</string>
     <string name="public_res_setting">设置</string>
+    <string name="public_step_next">下一步</string>
+    <string name="public_password_forget_title">忘记密码</string>
+    <string name="public_code_input_hint">输入验证码</string>
+    <string name="public_register_title">注册</string>
+    <string name="public_register_hint">手机号仅用于登录和保护账号安全</string>
+    <string name="public_register_password_hint1">设置6&#8211;18位登录密码</string>
+    <string name="public_register_password_hint2">请再次输入一次密码</string>
 
 </resources>

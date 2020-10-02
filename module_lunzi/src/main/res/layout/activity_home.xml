@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:ignore="ResourceName">
 
@@ -55,7 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/lun_home_view" />
-
 
 
 

@@ -11,6 +11,8 @@
     tools:context=".mvp.ui.activity.LoginActivity"
     tools:layoutAnimation="@null">
 
+    <include layout="@layout/public_include_title"/>
+
     <com.xp.coms.view.ScaleImageView
         android:layout_weight="4"
         android:layout_marginTop="30dp"
@@ -36,10 +38,11 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="10dp"
+            android:text="bzzguo@qq.com"
             android:hint="@string/public_phone_input_hint"
             android:inputType="textVisiblePassword"
             android:singleLine="true"
-            app:public_regexType="mobile" />
+            app:public_regexType="nonnull" />
 
         <View
             style="@style/public_HorizontalLineStyle"
@@ -52,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="20dp"
+            android:text="lp15034561572.."
             android:hint="@string/public_password_input_hint"
             android:maxLength="20"
             android:maxLines="1" />

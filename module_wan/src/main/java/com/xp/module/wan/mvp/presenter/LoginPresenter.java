@@ -1,6 +1,7 @@
 package com.xp.module.wan.mvp.presenter;
 
 import android.app.Application;
+import android.widget.Toast;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.OnLifecycleEvent;
@@ -24,6 +25,8 @@ import com.jess.arms.utils.RxLifecycleUtils;
 import com.xp.module.wan.mvp.contract.LoginContract;
 import com.xp.module.wan.mvp.model.entity.BaseWanResponse;
 import com.xp.module.wan.mvp.model.entity.WanLoginBean;
+import com.xp.module.wan.mvp.ui.activity.HomeActivity;
+import com.xp.module.wan.mvp.ui.activity.LoginActivity;
 
 
 /**
@@ -72,7 +75,10 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
                 .subscribe(new ErrorHandleSubscriber<BaseWanResponse<WanLoginBean>>(mErrorHandler) {
                     @Override
                     public void onNext(BaseWanResponse<WanLoginBean> wanLogin) {
-                        ArmsUtils.snackbarText(wanLogin.toString());
+                        if(wanLogin.getCode() == 0){
+                            ArmsUtils.startActivity(HomeActivity.class);
+                            Toast.makeText(mApplication, "登陆成功", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
     }

@@ -8,15 +8,18 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.utils.ArmsUtils;
+import com.xp.coms.layout.titlebar.TitleBar;
 import com.xp.coms.view.ClearEditText;
 import com.xp.coms.view.PButton;
 import com.xp.coms.view.PTextView;
 import com.xp.coms.view.PasswordEditText;
 import com.xp.coms.view.ScaleImageView;
+import com.xp.comsdk.core.RouterHub;
 import com.xp.module.wan.R;
 import com.xp.module.wan.R2;
 import com.xp.module.wan.di.component.DaggerLoginComponent;
@@ -45,6 +48,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
  * <a href="https://github.com/JessYanCoding/MVPArmsTemplate">模版请保持更新</a>
  * ================================================
  */
+@Route(path = RouterHub.WAN_I.WAN_LOGIN_ACTIVITY,name = "玩Android登陆页")
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
 
     @BindView(R2.id.wan_login_logo)
@@ -64,6 +68,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @BindView(R2.id.wan_iv_login_wechat)
     ScaleImageView mWanIvLoginWechat;
 
+    @BindView(R2.id.base_title_bar)
+    TitleBar titleBar;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerLoginComponent //如找不到该类,请编译一下项目
@@ -81,7 +88,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
-        ArmsUtils.statuInScreen(this);
+        titleBar.setTitle("登陆");
     }
 
     @Override
@@ -116,9 +123,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public void onClick(View v) {
 
         if (v.getId() == R.id.wan_btn_login_commit) {
-            mPresenter.logIn("bzzguo@qq.com", "lp15034561572..");
+            mPresenter.logIn(mWanClearLoginPhone.getText().toString(),mWanPsLoginPassword.getText().toString());
         } else if(v.getId() == R.id.wan_login_register){
             ArmsUtils.startActivity(RegisterActivity.class);
+        } else if(v.getId() == R.id.wan_login_forget){
+            ArmsUtils.startActivity(ForgotPasswordActivity.class);
         }
 /*        switch (v.getId()) {
             default:

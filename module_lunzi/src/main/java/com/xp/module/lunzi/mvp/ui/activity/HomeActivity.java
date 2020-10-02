@@ -13,6 +13,8 @@ import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.xp.coms.dialog.ProgresDialog;
+import com.xp.coms.layout.titlebar.OnTitleBarListener;
+import com.xp.coms.layout.titlebar.TitleBar;
 import com.xp.coms.view.PButton;
 import com.xp.comsdk.core.RouterHub;
 import com.xp.module.lunzi.R;
@@ -57,6 +59,9 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
     @BindView(R2.id.lun_button_6)
     PButton mLunButton6;
 
+    @BindView(R2.id.base_title_bar)
+    TitleBar mTitleBar;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerHomeComponent //如找不到该类,请编译一下项目
@@ -75,6 +80,22 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
 
+        mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
+            @Override
+            public void onLeftClick(View v) {
+                ArmsUtils.snackbarText("sadfasdfsdf");
+            }
+
+            @Override
+            public void onTitleClick(View v) {
+
+            }
+
+            @Override
+            public void onRightClick(View v) {
+
+            }
+        });
     }
 
     @Override

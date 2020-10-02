@@ -153,7 +153,7 @@ public class MainActivity extends BaseActivity {
                 Utils.navigation(MainActivity.this, RouterHub.ELE_I.ELE_HOME_ACTIVITY);
                 break;
             case R.id.bt_wan:
-                Utils.navigation(MainActivity.this, RouterHub.WAN_I.WAN_HOME_ACTIVITY);
+                Utils.navigation(MainActivity.this, RouterHub.WAN_I.WAN_LOGIN_ACTIVITY);
                 break;
             case R.id.bt_lunzi:
                 Utils.navigation(MainActivity.this, RouterHub.LUNZI_I.LUNZI_HOME_ACTIVITY);

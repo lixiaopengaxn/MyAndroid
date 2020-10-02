@@ -13,6 +13,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.jess.arms.utils.ArmsUtils;
+import com.xp.coms.layout.titlebar.OnTitleBarListener;
+import com.xp.coms.layout.titlebar.TitleBar;
+import com.xp.coms.utils.ComCustom;
 import com.xp.module.wan.R;
 
 import timber.log.Timber;
@@ -35,13 +39,14 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
 
     @Override
     public void onActivityStarted(Activity activity) {
+        TitleBar titleBar = null;
         Timber.i(activity + " - onActivityStarted");
         if (!activity.getIntent().getBooleanExtra("isInitToolbar", false)) {
             //由于加强框架的兼容性,故将 setContentView 放到 onActivityCreated 之后,onActivityStarted 之前执行
             //而 findViewById 必须在 Activity setContentView() 后才有效,所以将以下代码从之前的 onActivityCreated 中移动到 onActivityStarted 中执行
             activity.getIntent().putExtra("isInitToolbar", true);
             //这里全局给Activity设置toolbar和title,你想象力有多丰富,这里就有多强大,以前放到BaseActivity的操作都可以放到这里
-            if (activity.findViewById(R.id.toolbar) != null) {
+            if (activity.findViewById(R.id.public_toolbar) != null) {
                 if (activity instanceof AppCompatActivity) {
                     ((AppCompatActivity) activity).setSupportActionBar(activity.findViewById(R.id.toolbar));
                     ((AppCompatActivity) activity).getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -52,24 +57,27 @@ public class ActivityLifecycleCallbacksImpl implements Application.ActivityLifec
                     }
                 }
             }
-  /*          *//**
-             * 递归获取 ViewGroup 中的 TitleBar 对象
-             *//*
-                ViewGroup group  = activity.findViewById(Window.ID_ANDROID_CONTENT)
-                for (int i = 0; i < group.getChildCount(); i++) {
-                    View view = group.getChildAt(i);
-                    if ((view instanceof Toolbar)) {
 
-                    } else if (view instanceof ViewGroup) {
-                        Toolbar titleBar = obtainTitleBar((ViewGroup) view);
-                        if (titleBar != null) {
-                            return titleBar;
+            if (activity.findViewById(R.id.base_title_bar) != null) {
+                titleBar =  activity.findViewById(R.id.base_title_bar);
+                if(titleBar != null){
+                    titleBar.setOnTitleBarListener(new OnTitleBarListener() {
+                        @Override
+                        public void onLeftClick(View v) {
+                            ArmsUtils.snackbarText("onLeftClick");
                         }
-                    }
-                }*/
 
-            if (activity.findViewById(R.id.toolbar_title) != null) {
-                ((TextView) activity.findViewById(R.id.toolbar_title)).setText(activity.getTitle());
+                        @Override
+                        public void onTitleClick(View v) {
+                            ArmsUtils.snackbarText("onTitleClick");
+                        }
+
+                        @Override
+                        public void onRightClick(View v) {
+                            ArmsUtils.snackbarText("onRightClick");
+                        }
+                    });
+                }
             }
             if (activity.findViewById(R.id.toolbar_back) != null) {
                 activity.findViewById(R.id.toolbar_back).setOnClickListener(v -> {

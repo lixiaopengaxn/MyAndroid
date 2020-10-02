@@ -40,7 +40,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
  */
 public class TitleBarActivity extends BaseActivity<TitleBarPresenter> implements TitleBarContract.View {
 
-    @BindView(R2.id.tb_main_bar)
+    @BindView(R2.id.base_title_bar)
     TitleBar mTitleBar;
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {

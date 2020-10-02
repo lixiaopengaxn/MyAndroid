@@ -13,6 +13,7 @@ import com.jess.arms.utils.ArmsUtils;
 import com.xp.coms.dialog.BaseDialog;
 import com.xp.coms.dialog.dialogSig.InputDialog;
 import com.xp.coms.dialog.dialogSig.MessageDialog;
+import com.xp.coms.layout.titlebar.TitleBar;
 import com.xp.coms.view.PButton;
 import com.xp.module.lunzi.R;
 import com.xp.module.lunzi.R2;
@@ -47,6 +48,9 @@ public class DialogsActivity extends BaseActivity<DialogsPresenter> implements D
     PButton mBtnDialogInput;
     @BindView(R2.id.btn_dialog_bottom_menu)
     PButton mBtnDialogBottomMenu;
+
+    @BindView(R2.id.base_title_bar)
+    TitleBar mTitleBar;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {

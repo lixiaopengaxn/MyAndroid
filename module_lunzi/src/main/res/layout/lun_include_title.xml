@@ -10,21 +10,21 @@
     app:contentInsetStart="0dp"
     tools:ignore="ResourceName">
 
-    <com.xp.coms.layout.titlebar.TitleBar
-        android:id="@+id/base_title_bar"
-        android:elevation="1dp"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:public_drawableSize="27dp"
-        android:background="@drawable/public_shape_gradient"
-        app:public_barStyle="transparent"
-        app:public_leftBackground="@null"
-        app:public_leftTitle="@null"
-        app:public_rightBackground="@null"
-        app:public_rightTitle="@string/public_res_setting"
-        app:public_title="@string/public_app_name"
-        app:public_titleColor="@null"
-        app:public_lineVisible="false"/>
+        <com.xp.coms.layout.titlebar.TitleBar
+            android:id="@+id/base_title_bar"
+            android:elevation="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:public_drawableSize="27dp"
+            android:background="@drawable/public_shape_gradient"
+            app:public_barStyle="transparent"
+            app:public_leftBackground="@null"
+            app:public_leftTitle="@null"
+            app:public_rightBackground="@null"
+            app:public_rightTitle="@string/public_res_setting"
+            app:public_title="@string/public_app_name"/>
+
+
 
     <RelativeLayout
         android:visibility="gone"
